@@ -1,0 +1,15 @@
+eureka/bin/main/com/
+eureka/bin/test/
+eureka/gradle/wrapper/gradle-wrapper.jar
+eureka/gradlew
+eureka/gradlew.bat
+micro-config-server/bin/main/com/
+micro-config-server/bin/test/
+micro-config-server/gradle/wrapper/gradle-wrapper.jar
+micro-config-server/gradlew
+micro-config-server/gradlew.bat
+micro-service-one/bin/main/com/
+micro-service-one/bin/test/
+micro-service-one/gradle/wrapper/gradle-wrapper.jar
+micro-service-one/gradlew
+micro-service-one/gradlew.bat
