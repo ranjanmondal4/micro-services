@@ -1,16 +1,11 @@
-spring:
-  application:
-    name: micro-eureka-server
-
 server:
   port: 9001
-
 
 eureka:
   client:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://127.0.0.1:9001/eureka/
+      defaultZone: http://127.0.0.1:${server.port}/eureka/
   instance:
     hostname: localhost

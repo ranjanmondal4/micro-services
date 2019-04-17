@@ -23,3 +23,24 @@ These additional references should also help you:
 ### For finding environment settings
 http://localhost:9002/test/dev
 
+spring:
+  application:
+    name: configserver
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+    #    prefix:  /config
+        composite:
+          #- type: native
+           search-locations: ${HOME}/Documents/projects/java/microServices/configuration
+        #bootstrap: true
+       
+       
+server:
+  port: 9002
+  
+  https://dzone.com/articles/quick-guide-to-microservices-with-spring-boot-20-e
+  
+

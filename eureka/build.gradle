@@ -18,10 +18,13 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server')
+	compile('org.springframework.cloud:spring-cloud-starter-config')
 }
 
 dependencyManagement {
 	imports {
-		mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Finchley.SR2'
+		//mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Finchley.SR2'
+		//mavenBom "org.springframework.cloud:spring-cloud-dependencies:Edgware.RELEASE"
+		mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Finchley.RELEASE'
 	}
 }

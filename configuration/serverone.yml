@@ -1,0 +1,15 @@
+#spring.application.name=serverone
+#spring.cloud.config.uri=http://localhost:9002
+#spring.profiles.active=dev
+#management.endpoints.web.exposure.include=refresh
+
+server:
+  port: 9100
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9001/eureka
+#eureka.client.instance.preferIpAddress=true
+     
+#server.port=9100
