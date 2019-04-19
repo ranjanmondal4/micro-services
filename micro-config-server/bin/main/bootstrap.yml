@@ -6,9 +6,9 @@ spring:
   cloud:
     config:
       server:
-        git.clone-on-start: true
+        # git.clone-on-start: true
         native:
-          searchLocations: ${HOME}/Documents/projects/java/microServices/configuration
+          search-locations: ${HOME}/Documents/projects/java/microServices/configuration
       
 server:
   port: 8888
@@ -25,3 +25,9 @@ eureka:
        defaultZone: http://localhost:9001/eureka
     register-with-eureka: true
     fetch-registry: true
+    registry-fetch-interval-seconds: 10
+    instance-info-replication-interval-seconds: 10
+  instance:
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 20
+    #prefer-ip-address: true

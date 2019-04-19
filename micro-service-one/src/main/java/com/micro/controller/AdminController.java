@@ -23,14 +23,17 @@ public class AdminController {
 
 	/*
 	 * @Autowired private EnvironmentConfig env;
-	 * 
-	 * 
-	 * @GetMapping(value = "/configuration") public ResponseEntity<Object>
-	 * permissions(HttpServletResponse resp) {
-	 * 
-	 * Map<String, Object> result = new HashMap<>(); result.put("message",
-	 * env.getName()); return new ResponseEntity<>(result, HttpStatus.OK);
-	 * 
-	 * }
 	 */
+	@Value("${premium-email-suffix}")
+	private String name;
+
+	@GetMapping(value = "/configuration")
+	public ResponseEntity<Object> permissions(HttpServletResponse resp) {
+
+		Map<String, Object> result = new HashMap<>();
+		result.put("message", name);
+		return new ResponseEntity<>(result, HttpStatus.OK);
+
+	}
+
 }
