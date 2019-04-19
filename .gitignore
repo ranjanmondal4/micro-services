@@ -17,3 +17,13 @@ micro-service-one/gradlew.bat
 *.class
 *.gradle
 *.jar
+
+micro-config-server/bin/main/META-INF/
+micro-config-server/src/main/java/META-INF/
+micro-gateway/gradle/
+micro-gateway/gradlew
+micro-gateway/gradlew.bat
+micro-service-one/bin/main/META-INF/
+micro-service-one/gradle/wrapper/gradle-wrapper.jar
+micro-service-one/src/main/java/META-INF/
+micro-service-one/gradle/wrapper/
