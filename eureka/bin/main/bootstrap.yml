@@ -1,14 +1,26 @@
 spring:
   application:
-    name: discovery
-  cloud:
-    config:
-     # name: configuration-server
-      uri: http://localhost:9002
+    name: eureka
+#  cloud:
+#    config:
+#     name: configuration-server
+#      uri: http://localhost:9002
+      
+server:
+  port: 9001
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    service-url:
+      defaultZone: http://localhost:${server.port}
+  instance:
+    hostname: localhost
+      
       
 management:
   endpoints:
     web:
       exposure:
         include: refresh
-  

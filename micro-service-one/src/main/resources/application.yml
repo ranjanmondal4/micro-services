@@ -1,0 +1,10 @@
+server: 
+  port: 8085
+
+premium-email-suffix: yahoo.com
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

@@ -1,0 +1,71 @@
+# Getting Started
+
+### Reference Documentation
+For further reference, please consider the following sections:
+
+* [Official Gradle documentation](https://docs.gradle.org)
+
+### Guides
+The following guides illustrate how to use some features concretely:
+
+* [Building a RESTful Web Service with Spring Boot Actuator](https://spring.io/guides/gs/actuator-service/)
+* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
+* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
+* [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
+
+### Additional Links
+These additional references should also help you:
+
+* [Gradle Build Scans – insights for your project's build](https://scans.gradle.com#gradle)
+
+
+
+
+
+spring:
+  application:
+    name: discovery
+  cloud:
+    config:
+     # name: configuration-server
+      uri: http://localhost:9002
+      
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
+        
+        
+        plugins {
+	id 'org.springframework.boot' version '2.1.4.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.micro'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server')
+	compile('org.springframework.cloud:spring-cloud-starter-config')
+}
+
+dependencyManagement {
+	imports {
+		//mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Finchley.SR2'
+		//mavenBom "org.springframework.cloud:spring-cloud-dependencies:Edgware.RELEASE"
+		mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Finchley.RELEASE'
+	}
+}
+        
+  eureka.server.wait-time-in-ms-when-sync-empty=0

@@ -25,22 +25,47 @@ http://localhost:9002/test/dev
 
 spring:
   application:
-    name: configserver
+    name: configuration-server
   profiles:
     active: native
   cloud:
     config:
+      discovery: 
+        enabled: false
       server:
-    #    prefix:  /config
-        composite:
-          #- type: native
-           search-locations: ${HOME}/Documents/projects/java/microServices/configuration
-        #bootstrap: true
-       
-       
+        git:
+          # uri:
+          # search-paths:
+          clone-on-start: true
+        native:
+          searchLocations: ${HOME}/Documents/projects/java/microServices/configuration       
+
 server:
-  port: 9002
+  port: 8888
+
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'
+        
+eureka:
+    client:
+      service-url:
+        defaultZone: http://localhost:9001/eureka/
+      enabled: true
+      registryFetchIntervalSeconds: 10 
+      instanceInfoReplicationIntervalSeconds: 10
+    instance:
+      leaseRenewalIntervalInSeconds: 10
+      leaseExpirationDurationInSeconds: 20
   
   https://dzone.com/articles/quick-guide-to-microservices-with-spring-boot-20-e
   
 
+#eureka.client.service-url.defaultZone=http://localhost:9000/eureka/
+#eureka.client.enabled=true
+#eureka.client.registryFetchIntervalSeconds=10 
+#eureka.client.instanceInfoReplicationIntervalSeconds=10
+#eureka.instance.leaseRenewalIntervalInSeconds=10
+#eureka.instance.leaseExpirationDurationInSeconds=20
