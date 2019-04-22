@@ -8,7 +8,7 @@ spring:
       server:
         # git.clone-on-start: true
         native:
-          search-locations: ${HOME}/Documents/projects/java/microServices/configuration
+          search-locations: ${HOME}/Documents/projects/java/microServices/configuration/
       
 server:
   port: 8888
@@ -30,4 +30,4 @@ eureka:
   instance:
     lease-renewal-interval-in-seconds: 10
     lease-expiration-duration-in-seconds: 20
-    #prefer-ip-address: true
+    prefer-ip-address: true

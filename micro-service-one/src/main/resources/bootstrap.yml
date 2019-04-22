@@ -1,21 +1,23 @@
 spring:
   application:
     name: serverone
-  cloud:
-    config:
-      #name: configuration-server
-      # label: 'spingIO' for git branch
-      #uri: http://localhost:8888 #(binds directly to config server)
-      discovery:
-         service-id: configuration-server
-         enabled: true
+#  cloud:
+#    config:
+#      #name: configuration-server
+#      # label: 'spingIO' for git branch
+#       uri: http://localhost:8888 #(binds directly to config server)
+#      fail-fast: true
+#      discovery:
+#         service-id: configuration-server
+#         enabled: true
+         
 server:
     port: 9100
   
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:9001/eureka/
+      defaultZone: http://localhost:9001/eureka
     enabled: true
     registerWithEureka: true
     fetchRegistry: true
@@ -24,5 +26,7 @@ eureka:
   instance:
     leaseRenewalIntervalInSeconds: 10
     leaseExpirationDurationInSeconds: 20
-    # preferIpAddress: true
+    preferIpAddress: true
+    
+premium-email-suffix: local.com
     
